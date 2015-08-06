@@ -9,6 +9,6 @@ class Profile
     @about = About.new(@doc)
     @social = Social.new(@doc)
     @recently = Recently.new(@doc)
-    @favorites = Favorite.new(@doc)
+    @favorites = Favorites.new(@doc)
   end
 end

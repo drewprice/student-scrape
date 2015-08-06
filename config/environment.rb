@@ -16,5 +16,5 @@ require_relative '../lib/profile/favorites'
 require_relative '../lib/profile/recently'
 require_relative '../lib/profile/social'
 
-# Command prompt
-require_relative '../lib/command_prompts.rb'
+# Interface
+require_relative '../lib/interface.rb'

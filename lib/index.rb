@@ -1,7 +1,7 @@
 class Index
   attr_accessor :students
   def initialize
-    html=open('http://web0715.students.flatironschool.com/')
+    html=open("http://localhost:8000/")
     index=Nokogiri::HTML(html)
     @students={}
     index.search("li.home-blog-post").each do |post|

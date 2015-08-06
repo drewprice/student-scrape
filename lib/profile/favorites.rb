@@ -1,10 +1,10 @@
 class Favorites
-  attr_accessor :cities, :other, :projects
+  attr_accessor :cities, :websites, :projects
   def initialize(doc)
     @doc = doc
 
     @cities = read_cities
-    @other = read_other
+    @websites = read_websites
     @projects = read_projects
   end
 
@@ -16,7 +16,7 @@ class Favorites
     cities.join("\n")
   end
 
-  def read_other
+  def read_websites
     @doc.css("div#scroll-favorites div#ok-text-column-3 p a").attr("href").value
   end
 
@@ -25,4 +25,3 @@ class Favorites
   end
 
 end
-

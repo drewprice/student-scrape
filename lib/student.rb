@@ -9,6 +9,6 @@ class Student
     @photo='http://localhost:8000/' + photo
   end
   def profile
-    @profile=profile.new(self)
+    @profile= Profile.new(self)
   end
 end
