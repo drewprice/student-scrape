@@ -1,5 +1,5 @@
 class Profile
-  attr_reader :name, :url, :tag, :excerpt, :about, :coder_cred, :recently, :favorites
+  attr_reader :about, :coder, :recently, :favorites
 
   def initialize(student)
     @student = student

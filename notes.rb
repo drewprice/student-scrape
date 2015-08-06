@@ -9,9 +9,23 @@ class Student
     @excerpt = excerpt
   end
 
-  def profile=()
+  def open_profile
     @profile = Profile.new(self)
   end
+
+  def twitter
+    profile.social.twitter
+  end
+
+  # etc
+end
+
+class Interface
+  def initialize
+    @student =
+  end
+
+  # to_s
 end
 
 students = {
@@ -20,32 +34,20 @@ students = {
   # etc
 }
 
-# Profile scrape gives CLI ability to do something like
-def open_profile
-  Student.new(student.url)
-end
-
 # ...which returns:
 class Profile
   attr_reader :about, :coder_cred, :recently, :favorites
 
-  def initialize(properties = {})
-    @social = SocialProfile.new
-    @quote = # this
-    @about = {
-      bio: 'bio stuff',
-      # etc
-      # page's visual hiearchy
-    }
-    @coder_cred = {
-      # page's visual hiearchy
-    }
-    @recently = {
-      # page's visual hiearchy
-    }
-    @favorites = {
-      # page's visual hiearchy
-    }
+  def initialize(student)
+    @student = student
+    @html = open(student.url)
+    @doc = Nokogiri::HTML(@html)
+
+    @about = About.new(@doc)
+    @social = Social.new()
+    @coder_cred = CoderCred.new()
+    @recently = Recently.new()
+    @favorites = Favorite.new()
   end
 end
 

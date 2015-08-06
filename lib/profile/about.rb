@@ -4,8 +4,8 @@ class About
     @doc = doc
 
     @bio = read_bio
-    @edu =
-    @work =
+    @edu = read_edu
+    @work = read_work
   end
 
   def biography
@@ -20,11 +20,22 @@ class About
 
   def read_work
     company = @doc.css("#ok-text-column-4 h4").text
-    description =
+
+    description = @doc.css("#ok-text-column-4 p").text
+      .split(/Coming Soon\.\./)
+      .first
+      .strip
+
+    return work_helper if description.empty?
+
+    "#{company}: #{description}"
   end
 
   def work_helper
-
+    @doc.css("#ok-text-column-4 ul").children
+      .map { |li| li.text.strip }
+      .delete_if(&:empty?)
+      .join("\n")
   end
 
   def read_edu
