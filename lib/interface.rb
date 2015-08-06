@@ -66,6 +66,7 @@ class Interface
       \n"
     else
       puts "No srsly tho."
+      # TODO add escape option
       look_up
     end
   end
