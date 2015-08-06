@@ -21,10 +21,7 @@ class About
   def read_work
     company = @doc.css("#ok-text-column-4 h4").text
 
-    description = @doc.css("#ok-text-column-4 p").text
-      .split(/Coming Soon\.\./)
-      .first
-      .strip
+    description = @doc.css("#ok-text-column-4 p").first.text.strip
 
     return work_helper if description.empty?
 
@@ -32,23 +29,14 @@ class About
   end
 
   def work_helper
-    @doc.css("#ok-text-column-4 ul").children
-      .map { |li| li.text.strip }
-      .delete_if(&:empty?)
-      .join("\n")
+    @doc.css("#ok-text-column-4 li").map(&:text).join("\n")
   end
 
   def read_edu
-    @doc.css("#ok-text-column-3 ul").children
-      .map { |li| li.text.strip }
-      .delete_if(&:empty?)
-      .join("\n")
+    @doc.css("#ok-text-column-3 li").map(&:text).join("\n")
   end
 
   def read_bio
-    @doc.css("#ok-text-column-2 p").text
-      .split(/- Code School/)
-      .first
-      .strip
+    @doc.css("#ok-text-column-2 p").first.text.strip
   end
 end
