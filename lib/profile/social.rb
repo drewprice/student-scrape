@@ -12,18 +12,18 @@ class Social
   private
 
   def read_twitter
-    @doc.css("").text
+    @doc.css('div.social-icons a').first.attr("href")
   end
 
   def read_linkedin
-    @doc.css("").text
+    @doc.css('div.social-icons a')[1].attr("href")
   end
 
   def read_github
-    @doc.css("").text
+    @doc.css('div.social-icons a')[2].attr("href")
   end
 
   def read_rss
-    @doc.css("").text
+    @doc.css('div.social-icons a')[3].attr("href")
   end
 end
