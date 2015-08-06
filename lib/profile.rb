@@ -1,5 +1,5 @@
 class Profile
-  attr_reader :about, :coder, :recently, :favorites
+  attr_reader :about, :social, :recently, :favorites
 
   def initialize(student)
     @student = student
@@ -7,9 +7,8 @@ class Profile
     @doc = Nokogiri::HTML(@html)
 
     @about = About.new(@doc)
-    @social = Social.new()
-    @coder_cred = CoderCred.new()
-    @recently = Recently.new()
-    @favorites = Favorite.new()
+    @social = Social.new(@doc)
+    @recently = Recently.new(@doc)
+    @favorites = Favorite.new(@doc)
   end
 end
