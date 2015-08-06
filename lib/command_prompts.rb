@@ -1,6 +1,3 @@
-require_relative 'index-scrape'
-require 'pry'
-
 class Interface
 
 
@@ -68,7 +65,7 @@ class Interface
     else
       puts "No srsly tho."
       look_up
-    end 
+    end
   end
 
   def hotkey(item)
@@ -81,30 +78,6 @@ class Interface
         puts all_students[name.downcase].bio
       when item == "blog"
         puts all_students[name.downcase].blog
-    end   
+    end
   end
-
-  # def twitter
-  #   puts "Whose twitter?"
-  #   name = gets.chomp.downcase
-  #   puts all_students[name.downcase].twitter
-  # end
-
-  # def bio
-  #   puts "Whose bio?"
-  #   name = gets.chomp.downcase
-  #   puts all_students[name.downcase].bio
-  # end
-
-  # def blog
-  #   puts "Whose blog, bub?"
-  #   name = gets.chomp.downcase
-  #   puts all_students[name.downcase].blog
-  # end
-
 end
-
-
-Interface.new
-
-
