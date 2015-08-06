@@ -30,11 +30,14 @@ class Recently
   end
 
   def read_projects
-    @doc.css("").text
-    #.css("div#scroll-recently div#ok-text-column-3 p a")
+    @doc.css("div#scroll-recently div#ok-text-column-4 p").text
   end
 
   def read_blog
-    @doc.css("").text
+    ret=@doc.css("div#scroll-recently div#ok-text-column-3 p a").collect do |link|
+      "#{link.text} : #{link.attr("href")}"
+    end
+    ret.join("\n")
+
   end
 end
