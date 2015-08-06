@@ -1,4 +1,4 @@
-# Index scrape outputs/Command line receives
+### Index scrape outputs/Command line receives
 ```ruby
 class Student
   attr_reader :name, :url, :tag, :excerpt, :img, :profile
@@ -28,15 +28,15 @@ class Interface
 
   # to_s
 end
-```
 
 students = {
   student: StudentBrief.new(name, url, tag, excerpt),
   other_student: #<Student object>,
   # etc
 }
+```
 
-# ...which returns:
+### ...which returns:
 ```ruby
 class Profile
   attr_reader :about, :coder_cred, :recently, :favorites
