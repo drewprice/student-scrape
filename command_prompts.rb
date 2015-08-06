@@ -3,7 +3,6 @@ require 'pry'
 
 class Interface
 
-  attr_reader 
 
   def initialize
     @students_list = Index.new
@@ -54,17 +53,17 @@ class Interface
       puts "Name: #{name}
       \nBiography: #{all_students[name.downcase].biography}
       \nEducation: #{all_students[name.downcase].education}
-      \nWork: 
-      \nGithub:
-      \nTreehouse:
-      \nCodeSchool:
-      \nCoderwall:
-      \nBlogs:
-      \nPersonal projects:
-      \nFavorite cities:
-      \nFavorite sites:
-      \nPersonal projects:
-      \nPicture: 
+      \nWork: #{all_students[name.downcase].work}
+      \nGithub: #{all_students[name.downcase].github}
+      \nTreehouse: #{all_students[name.downcase].treehouse}
+      \nCodeSchool: #{all_students[name.downcase].codeschool}
+      \nCoderwall: #{all_students[name.downcase].coderwall}
+      \nBlogs: #{all_students[name.downcase].blogs}
+      \nCoding projects: #{all_students[name.downcase].coding_projects}
+      \nFavorite cities: #{all_students[name.downcase].cities}
+      \nFavorite sites: #{all_students[name.downcase].sites}
+      \nPersonal projects: #{all_students[name.downcase].personal_projects}
+      \nPicture: #{all_students[name.downcase].img}
       \n"
     else
       puts "No srsly tho."
